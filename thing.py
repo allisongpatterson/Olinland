@@ -3,8 +3,9 @@ from player import *
 
 class Thing (WObject):
 
-    def __init__ (self,name,loc):
+    def __init__ (self,name,loc,desc):
         WObject.__init__(self,name)
+        self._description = desc
         self._location = loc
         loc.add_thing(self)
 
@@ -22,6 +23,9 @@ class Thing (WObject):
 
     def location (self):
         return self._location
+
+    def description (self):
+        return self._description
         
     def is_in_limbo (self):
         return self.location() is None

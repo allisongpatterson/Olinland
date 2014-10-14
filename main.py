@@ -66,20 +66,20 @@ def create_world ():
 
     # The player is the first 'thing' that has to be created
 
-    Player('Blubbering-Fool', oval)
+    Player('Blubbering-Fool', oval, 'player desc')
 
-    Radar('handy radar',mh353) 
-    Thing('blackboard', ac113)
-    Thing('lovely-trees', oval)
-    MobileThing('cs-book', oval)
-    MobileThing('math-book', oval)
+    Radar('handy radar', mh353, 'radar desc') 
+    Thing('blackboard', ac113, 'blackboard desc')
+    Thing('lovely-trees', oval, 'trees desc')
+    MobileThing('cs-book', oval, 'cs book desc')
+    MobileThing('math-book', oval, 'math book desc')
 
-    MobileThing('food', dhall)
+    MobileThing('food', dhall, 'food desc')
 
-    Computer('hal-9000', ac113)
-    Computer('johnny-5', easth)
+    Computer('hal-9000', ac113, 'hal-9000 desc')
+    Computer('johnny-5', easth, 'johnny-5 desc')
 
-    Professor('Riccardo',mh353,random.randint(1,5),2)
+    Professor('Riccardo', mh353, 'Riccardo desc', random.randint(1,5),2)
     
     homeworks = ['hw-1', 
                  'hw-2',
@@ -90,7 +90,7 @@ def create_world ():
     
     for homework in homeworks:
         Homework(homework,
-                 random.choice(Room.rooms))
+                 random.choice(Room.rooms), 'hw-x desc')
 
     students = ['Frankie Freshman',
                 'Joe Junior',
@@ -99,7 +99,8 @@ def create_world ():
 
     for student in students:
         NPC(student,
-            random.choice(Room.rooms),
+            random.choice(Room.rooms), 
+            'student desc',
             random.randint(1,5),
             random.randint(1,5))
 
@@ -109,6 +110,7 @@ def create_world ():
     for troll in trolls:
       Troll(troll,
             random.choice(Room.rooms),
+            'troll desc',
             random.randint(1,3),
             random.randint(1,3))
 
