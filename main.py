@@ -1,3 +1,4 @@
+"""Allison Patterson and Jacob Kingery"""
 
 import random
 
