@@ -37,19 +37,19 @@ def biconnect (fr,dir,to):
 
 def create_world ():
 
-    mh353 = Room('Riccardo Office')
-    mh3rd = Room('Milas Hall Third Floor')
-    mh2nd = Room('Milas Hall Second Floor')
-    mh1st = Room('Milas Hall First Floor')
-    oval = Room('Oval')
-    ac1st = Room('Academic Center First Floor')
-    ac113 = Room('Academic Center 113')
-    cc1st = Room('Campus Center First Floor')
-    westh = Room('West Hall')
-    easth = Room('East Hall')
-    babson = Room('Babson College')
+    mh353 = Room('Riccardo Office', 'It\'s a bit cramped in here.')
+    mh3rd = Room('Milas Hall Third Floor', 'desc')
+    mh2nd = Room('Milas Hall Second Floor', 'desc')
+    mh1st = Room('Milas Hall First Floor', 'desc')
+    oval = Room('Oval', 'The Oval, smack in the center of Olin College.')
+    ac1st = Room('Academic Center First Floor', 'desc')
+    ac113 = Room('Academic Center 113', 'desc')
+    cc1st = Room('Campus Center First Floor', 'desc')
+    westh = Room('West Hall', 'The first (and western most) of Olin\'s two dorms.')
+    easth = Room('East Hall', 'The second (and eastern most) of Olin\'s two dorms.')
+    babson = Room('Babson College', 'Land of the Beavers.')
 
-    dhall = Room('Dining Hall')
+    dhall = Room('Dining Hall', 'desc')
 
     biconnect(mh353, 'east',  mh3rd)
     biconnect(mh3rd, 'down',  mh2nd)
