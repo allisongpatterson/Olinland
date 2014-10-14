@@ -69,6 +69,7 @@ def create_world ():
     Player('Blubbering-Fool', oval, 'player desc')
 
     Radar('handy radar', mh353, 'radar desc') 
+    # Radar('handy radar', oval, 'radar desc') 
     Thing('blackboard', ac113, 'blackboard desc')
     Thing('lovely-trees', oval, 'trees desc')
     MobileThing('cs-book', oval, 'cs book desc')
