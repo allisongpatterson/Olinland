@@ -115,7 +115,10 @@ class Drop (Verb):
 class Give (Verb):
 
     def action2 (self,obj1,obj2):
-        obj1.give(Player.me,obj2)
+        if not Player.me.have_thing(obj1):
+            Player.me.say('I am not carrying '+obj1.name())
+        else:
+            obj1.give(Player.me,obj2)
         return SAME_ROUND
 
 class Kill (Verb):

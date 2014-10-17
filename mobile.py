@@ -24,8 +24,8 @@ class MobileThing (Thing):
 
     def give (self,actor,target):
         actor.say('I give '+self.name()+ ' to '+target.name())
-        target.accept(self, actor)
         self.move(target)
+        target.accept(self, actor)
 
     def creation_site (self):
         return self._original_location
