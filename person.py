@@ -6,6 +6,7 @@ class Person (MobileThing):    # Container...
         MobileThing.__init__(self,name,loc,desc)
         self._max_health = 3
         self._health = self._max_health
+        self._pocket = []
 
     def health (self):
         return self._health
@@ -32,8 +33,16 @@ class Person (MobileThing):    # Container...
     # same location as this person are holding/carrying
 
     def peek_around (self):
-        # FIX ME
-        return []
+        return [x for person in self.people_around() for x in person.check_pocket()]
+
+    def check_pocket (self):
+        return self._pocket
+
+    def add_thing (self,t):
+        self._pocket.append(t)
+
+    def del_thing (self,t):
+        self._pocket = [x for x in self._pocket if x is not t]
 
     def lose (self,t,loseto):
         self.say('I lose ' + t.name())
@@ -65,6 +74,8 @@ class Person (MobileThing):    # Container...
 
     def die (self):
         self.location().broadcast('An earth-shattering, soul-piercing scream is heard...')
+        for x in self.check_pocket():
+            x.drop(self)
         self.destroy()
         
 

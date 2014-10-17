@@ -97,7 +97,10 @@ class Use (Verb):
 class Take (Verb):
 
     def action1 (self,obj):
-        obj.take(Player.me)
+        if Player.me.have_thing(obj):
+            Player.me.say('I am already carrying '+obj.name())
+        else:
+            obj.take(Player.me)
         return SAME_ROUND
 
 class Drop (Verb):
@@ -115,4 +118,7 @@ class Give (Verb):
         obj1.give(Player.me,obj2)
         return SAME_ROUND
 
-        
+class Kill (Verb):
+
+    def action1 (self,victim):
+        victim.die()

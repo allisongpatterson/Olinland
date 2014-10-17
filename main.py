@@ -80,7 +80,9 @@ def create_world ():
     Computer('hal-9000', ac113, 'hal-9000 desc')
     Computer('johnny-5', easth, 'johnny-5 desc')
 
-    Professor('Riccardo', mh353, 'Riccardo desc', random.randint(1,5),2)
+
+    Professor('Riccardo', oval, 'Riccardo desc', random.randint(1,5),2)
+    # Professor('Riccardo', mh353, 'Riccardo desc', random.randint(1,5),2)
     
     homeworks = ['hw-1', 
                  'hw-2',
@@ -130,7 +132,8 @@ VERBS = {
     'east' : Direction('east'),
     'west' : Direction('west'),
     'up'   : Direction('up'),
-    'down' : Direction('down')
+    'down' : Direction('down'),
+    'kill' : Kill()
 }
   
 
