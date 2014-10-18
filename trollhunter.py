@@ -21,3 +21,7 @@ class Trollhunter (NPC):
         if not killed:
             self.say('I sniff around but smell no trolls. Bummer.')
             self.move_somewhere()
+
+    def die (self):
+        self.say('AHHH! I have been slain! Avenge me...')
+        Person.die(self)

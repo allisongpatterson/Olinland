@@ -10,6 +10,7 @@ from radar import *
 from troll import *
 from professor import *
 from trollhunter import *
+from badninja import *
 from homework import *
 from computer import *
 
@@ -120,6 +121,7 @@ def create_world ():
 
 
     Trollhunter('Hunter', oval, 'trollhunter desc')
+    BadNINJA('Greg', oval, 'Greg is bad ninja.', 5, 5)
 
 VERBS = {
     'quit' : Quit(),
