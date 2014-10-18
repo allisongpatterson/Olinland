@@ -8,6 +8,9 @@ class NPC (Person):
         Person.__init__(self,name,loc,desc)
         self._restlessness = restlessness
         self._miserly = miserly
+
+        # Register proactive behaviors
+        Player.clock.register(self.move_and_take_stuff, 2)
         
     def move_and_take_stuff (self,time):
         if not self.is_in_limbo():

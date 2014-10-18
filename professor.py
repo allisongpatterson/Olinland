@@ -9,6 +9,9 @@ class Professor (NPC):
         NPC.__init__(self,name,loc,desc,restlessness,100)
         self._professorial = professorial
 
+        # Register proactive behaviors
+        Player.clock.register(self.lecture, 2)
+
     _topics = ['Turing machines',
                'the lambda calculus',
                'Godel']

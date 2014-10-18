@@ -7,6 +7,9 @@ class Troll (NPC):
         NPC.__init__(self,name,loc,desc,restlessness,10)
         self._hunger = hunger
 
+        # Register proactive behaviors
+        Player.clock.register(self.eat_people, 2)
+
     def eat_people (self,time):
       if not self.is_in_limbo():
         if random.randrange(self._hunger) == 0:
