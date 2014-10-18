@@ -21,3 +21,6 @@ class Troll (NPC):
             else:
                 self.location().report(self.name() + "'s belly rumbles")
 
+    def is_troll (self):
+        return True
+        

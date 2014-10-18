@@ -9,6 +9,7 @@ from npc import *
 from radar import *
 from troll import *
 from professor import *
+from trollhunter import *
 from homework import *
 from computer import *
 
@@ -117,6 +118,8 @@ def create_world ():
             random.randint(1,3),
             random.randint(1,3))
 
+
+    Trollhunter('Hunter', oval, 'trollhunter desc')
 
 VERBS = {
     'quit' : Quit(),
