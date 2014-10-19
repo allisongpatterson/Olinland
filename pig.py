@@ -19,7 +19,11 @@ class Pig (NPC):
                 self.location().report(self.name() + ' enthusiastically trips ' + victim.name())
                 victim.suffer(1)
             else:
-                self.location().report(self.name() + ' squeals excitedly ')
+                self.location().report(self.name() + ' squeals excitedly')
+
+    def die (self):
+        self.say('SQUEEEEeeee...')
+        Person.die(self)
 
     def is_pig (self):
         return True

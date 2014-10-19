@@ -11,6 +11,7 @@ from troll import *
 from professor import *
 from trollhunter import *
 from badninja import *
+from butterfly import *
 from homework import *
 from computer import *
 
@@ -122,6 +123,7 @@ def create_world ():
 
     Trollhunter('Hunter', oval, 'trollhunter desc')
     BadNINJA('Greg', oval, 'Greg is bad ninja.', 5, 5)
+    Butterfly('Eric', oval, 'A caterpillar')
 
 VERBS = {
     'quit' : Quit(),
