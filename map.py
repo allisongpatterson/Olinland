@@ -14,7 +14,7 @@
         biconnect(GLE,'north',EH1)
 
         # AC
-        AC1 = Room('Academic Center First Floor','Here Lurks Room AC129 With Its Cavernous Floors And A Thirst For Sneakers')
+        AC1 = Room('Academic Center First Floor','Here Lurks Room AC128 With Its Cavernous Floors And A Thirst For Sneakers')
         AC2 = Room('Academic Center Second Floor','Freshie Central')
         AC3 = Room('Academic Center Third Floor','The Awkward Floor Between The Second And The Fourth')
         AC4 = Room('Academic Center Fourth Floor','The Elevator\'s Most Frequent Stop')
