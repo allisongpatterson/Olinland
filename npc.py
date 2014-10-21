@@ -10,7 +10,7 @@ class NPC (Person):
         self._miserly = miserly
 
         # Register proactive behaviors
-        Player.clock.register(self.move_and_take_stuff, 2)
+        Player.clock.register(self.move_and_take_stuff, 3)
         
     def move_and_take_stuff (self,time):
         if not self.is_in_limbo():

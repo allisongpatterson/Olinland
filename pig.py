@@ -8,7 +8,7 @@ class Pig (NPC):
         self._clumbsiness = clumbsiness
 
         # Register proactive behaviors
-        Player.clock.register(self.trip_people, 2)
+        Player.clock.register(self.trip_people, 3)
 
     def trip_people (self,time):
       if not self.is_in_limbo():

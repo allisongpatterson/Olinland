@@ -6,7 +6,7 @@ class BadNINJA (NPC):
         NPC.__init__(self,name,loc,desc,restlessness,miserly)
         
         # Register proactive behaviors
-        Player.clock.register(self.take_hw, 1)
+        Player.clock.register(self.take_hw, 2)
 
     def take_hw (self, time):
         if not self.is_in_limbo():

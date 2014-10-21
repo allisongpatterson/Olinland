@@ -15,7 +15,7 @@ class Cat (NPC):
             self.location().report(self.name() + ' takes the food and purrs loudly')
             obj.destroy()
             self._friend = source
-            Player.clock.register(self.follow, 3)
+            Player.clock.register(self.follow, 4)
         else:
             self.location().report(self.name() + ' has no use for that')
 

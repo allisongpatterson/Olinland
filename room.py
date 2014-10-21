@@ -17,8 +17,8 @@ class Room (WObject): #,Container):
         self._lockable = lockable
         if lockable:
             self._locked = True
-            self._lock_timer = 3
-            Player.clock.register(self.open_hours, 0)
+            self._lock_timer = 5
+            Player.clock.register(self.open_hours, 1)
 
     def description (self):
         return self._description
@@ -42,7 +42,7 @@ class Room (WObject): #,Container):
                     exits = self.exits()
                     dirc = random.choice(self.exits().keys())
                     for person in occupants:
-                        person.go(dirc)
+                        person.move(dirc)
 
 
     # You see room reports only if you are in the same room

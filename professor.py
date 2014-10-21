@@ -10,7 +10,7 @@ class Professor (NPC):
         self._professorial = professorial
 
         # Register proactive behaviors
-        Player.clock.register(self.lecture, 2)
+        Player.clock.register(self.lecture, 3)
 
     _topics = ['Turing machines',
                'the lambda calculus',

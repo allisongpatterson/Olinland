@@ -7,7 +7,7 @@ class Trollhunter (NPC):
         Person.__init__(self,name,loc,desc)
         
         # Register proactive behaviors
-        Player.clock.register(self.hunt, 1)
+        Player.clock.register(self.hunt, 2)
 
     def hunt (self, time):
         if not self.is_in_limbo():

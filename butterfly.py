@@ -11,7 +11,7 @@ class Butterfly (MobileThing):
         self._morph_timer = 3 
 
         # Register proactive behaviors
-        Player.clock.register(self.countdown, 1)
+        Player.clock.register(self.countdown, 2)
 
     def countdown (self, time):
         self._morph_timer -= 1
