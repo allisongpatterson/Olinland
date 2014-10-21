@@ -33,7 +33,7 @@ class Room (WObject): #,Container):
         self._lock_timer -= 1
         if not self._lock_timer:
             self._locked = not self._locked
-            self._lock_timer = 3
+            self._lock_timer = 5
             if self._locked:
                 occupants = [x for x in self.contents() if x.is_person()]
                 if occupants:

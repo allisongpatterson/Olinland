@@ -16,6 +16,7 @@ from homework import *
 from computer import *
 from cat import *
 from food import *
+from pig import *
 
 
 REVERSE = {
@@ -129,6 +130,10 @@ def create_world ():
     Butterfly('Eric', oval, 'A caterpillar')
     Cat('Felix',oval,'kitty cat')
     Food('tuna',oval,'noms')
+    Food('corn', oval, 'more noms')
+    Pig('Pig1', babson, 'oink', 5, 5)
+    Pig('Pig2', oval, 'oink oink', 5, 5)
+    Pig('Pig4', oval, 'oink oink oink oink', 5, 5)
 
 VERBS = {
     'quit' : Quit(),
