@@ -42,7 +42,7 @@ class Room (WObject): #,Container):
                     exits = self.exits()
                     dirc = random.choice(self.exits().keys())
                     for person in occupants:
-                        person.move(dirc)
+                        person.move(exits[dirc])
 
 
     # You see room reports only if you are in the same room

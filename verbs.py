@@ -125,3 +125,7 @@ class Kill (Verb):
 
     def action1 (self,victim):
         victim.die()
+
+class Hit (Verb):
+    def action1 (self, victim):
+        victim.suffer(1)

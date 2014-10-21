@@ -4,9 +4,10 @@ class Person (MobileThing):    # Container...
 
     def __init__ (self,name,loc,desc):
         MobileThing.__init__(self,name,loc,desc)
-        self._max_health = 3
+        self._max_health = 5
         self._health = self._max_health
         self._pocket = []
+        self._companion = None
 
     def max_health (self):
         return self._max_health
@@ -78,6 +79,8 @@ class Person (MobileThing):    # Container...
             self.die()
         else:
             self.say('My health is now '+str(self.health()))
+        if self._companion:
+            self._companion.scratch()
 
     def die (self):
         self.location().broadcast('An earth-shattering, soul-piercing scream is heard...')

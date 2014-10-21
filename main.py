@@ -122,6 +122,7 @@ def create_world ():
             random.randint(1,3),
             random.randint(1,3))
 
+    Troll('Buttface', oval, 'buttface', 100, 2)
 
     Trollhunter('Hunter', oval, 'trollhunter desc')
     BadNINJA('Greg', oval, 'Greg is bad ninja.', 5, 5)
@@ -144,7 +145,8 @@ VERBS = {
     'west' : Direction('west'),
     'up'   : Direction('up'),
     'down' : Direction('down'),
-    'kill' : Kill()
+    'kill' : Kill(),
+    'hit' : Hit()
 }
   
 
