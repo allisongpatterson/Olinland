@@ -57,11 +57,15 @@ class Person (MobileThing):    # Container...
         exits = loc.exits()
         if direction in exits:
             t = exits[direction]
-            self.leave_room()
-            loc.report(self.name()+' moves from '+ loc.name()+' to '+t.name())
-            self.move(t)
-            self.enter_room()
-            return True
+            if t.is_locked():
+                loc.report(self.name()+' tries to go to '+t.name()+', but isn\'t able to get in right now')
+                return False
+            else:
+                self.leave_room()
+                loc.report(self.name()+' moves from '+ loc.name()+' to '+t.name())
+                self.move(t)
+                self.enter_room()
+                return True
         else:
             print 'No exit in direction', direction
             return False

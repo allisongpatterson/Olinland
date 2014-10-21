@@ -26,3 +26,6 @@ class WObject (object):
 
     def is_homework (self):
         return False
+
+    def is_food (self):
+        return False
