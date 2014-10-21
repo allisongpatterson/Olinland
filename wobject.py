@@ -29,3 +29,6 @@ class WObject (object):
 
     def is_food (self):
         return False
+
+    def is_cat (self):
+        return False

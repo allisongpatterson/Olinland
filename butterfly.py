@@ -8,7 +8,7 @@ class Butterfly (MobileThing):
         self._flittiness = 2
         self._is_butterfly = False
         self._num_morphs = 0
-        self._morph_timer = 3
+        self._morph_timer = 3 
 
         # Register proactive behaviors
         Player.clock.register(self.countdown, 1)

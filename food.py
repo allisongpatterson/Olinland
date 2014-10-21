@@ -13,6 +13,7 @@ class Food (MobileThing):
         else:
             actor.reset_health()
             actor.say('The ' + self.name() + ' restores my health to ' + actor.health() + '!')
+        self.destroy()
 
     def is_food (self):
         return True

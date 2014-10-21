@@ -14,6 +14,8 @@ from badninja import *
 from butterfly import *
 from homework import *
 from computer import *
+from cat import *
+from food import *
 
 
 REVERSE = {
@@ -124,6 +126,8 @@ def create_world ():
     Trollhunter('Hunter', oval, 'trollhunter desc')
     BadNINJA('Greg', oval, 'Greg is bad ninja.', 5, 5)
     Butterfly('Eric', oval, 'A caterpillar')
+    Cat('Felix',oval,'kitty cat')
+    Food('tuna',oval,'noms')
 
 VERBS = {
     'quit' : Quit(),
