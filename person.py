@@ -8,6 +8,9 @@ class Person (MobileThing):    # Container...
         self._health = self._max_health
         self._pocket = []
 
+    def max_health (self):
+        return self._max_health
+
     def health (self):
         return self._health
 
