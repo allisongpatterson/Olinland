@@ -149,5 +149,3 @@ def make_map():
     biconnect(EH4,'west',EH4W)
     biconnect(EH4,'east',EH4E)
     biconnect(EH4,'north',EH4N)
-
-    return all
