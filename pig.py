@@ -1,5 +1,6 @@
 import random
 from npc import *
+from food import *
 
 class Pig (NPC):
 
@@ -68,6 +69,7 @@ class Pig (NPC):
 
     def die (self):
         self.say('SQUEEEEeeee...')
+        Food('bacon',self.location(),'poor ' + self.name())
         self.destroy()
 
     def is_pig (self):

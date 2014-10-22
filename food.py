@@ -11,8 +11,8 @@ class Food (MobileThing):
         if actor.health() == actor.max_health():
             actor.say('The ' + self.name() + ' has no effect')
         else:
-            actor.reset_health()
-            actor.say('The ' + self.name() + ' restores my health to ' + actor.health() + '!')
+            new_health = str(actor.reset_health())
+            actor.say('The ' + self.name() + ' restores my health to ' + new_health + '!')
         self.destroy()
 
     def is_food (self):

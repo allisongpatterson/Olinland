@@ -40,7 +40,7 @@ class Cat (NPC):
                     person.suffer(1)
 
     def suffer (self,hits):
-        self.say('meOW! '+str(hits)+' meow meow meow meow meow meow!')
+        self.say('me-OW! '+str(hits)+' meow meow meow meow meow meow!')
         self._health -= hits
         if (self.health() <= 0):
             self.die()

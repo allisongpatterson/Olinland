@@ -16,7 +16,8 @@ class Person (MobileThing):    # Container...
         return self._health
 
     def reset_health (self):
-        self._health = self._maxHealth
+        self._health = self._max_health
+        return self._health
 
     def say (self,msg):
         loc = self.location()
