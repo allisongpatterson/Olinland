@@ -17,6 +17,7 @@ from computer import *
 from cat import *
 from food import *
 from pig import *
+from wocket import *
 
 
 REVERSE = {
@@ -61,7 +62,7 @@ def create_world ():
     MH4 = Room('Milas Hall Fourth Floor','It\'s Entirely Possible That This Floor Doesn\'t Actually Exist',False)
 
     # DH
-    DH = Room('Dining Hall','Food Food Food Food Food',False)
+    DH = Room('Dining Hall','Food Food Food Food Food',True)
     Mezz = Room('Dining Hall Mezz','That Place Where All The Meetings Happen Because Outlets',False)
 
     # WH
@@ -149,34 +150,38 @@ def create_world ():
     biconnect(EH1,'east',EH1E)
     biconnect(EH1,'north',EH1N)
 
+
+    # make Player
     Player('Blubbering-Fool', Oval, 'player desc')
 
-    Radar('handy radar', MH3, 'Shiny!') 
-    Thing('blackboard', AC1, 'Ew, I think it got chalk dust on me.')
-    Thing('lovely-trees', Oval, 'That\'s funny, Olin has no trees...')
-    MobileThing('cs-book', Oval, 'Much knowledge, wow.')
-    MobileThing('math-book', Oval, 'ALL the numbers!')
-
-    Computer('hal-9000', AC1, '\"I can\t let you do that, Dave.\" Hm. Weird. Who\'s Dave?')
-    Computer('johnny-5', EH1, 'I\'ve never met a computer named Johnny before.')
-
+    # specific people
     Professor('Riccardo', AC1, 'I think he needs some sleep.', random.randint(1,5),2)
-    
-    homeworks = ['hw-1', 
-                 'hw-2',
-                 'hw-3',
-                 'hw-4',
-                 'hw-5',
-                 'hw-6']
-    
-    for homework in homeworks:
-        Homework(homework,
-                 random.choice(Room.rooms),'Gross.')
 
+    Troll('Buttface',Oval,'He\'s a buttface',random.randint(1,3),random.randint(1,3))
+    Troll('Babbie Bro',random.choice(Room.rooms),'Where\'s Bill when you need him?',random.randint(1,3),random.randint(1,3))
+
+    Trollhunter('Hunter', random.choice(Room.rooms), 'He\'s a great big manly man.')
+    Trollhunter('Bill the Babbie Beater', random.choice(Room.rooms), 'The legendary Defender of West Hall!')
+
+    BadNINJA('Greggers', EH1, 'I don\'t trust that guy... And why does he smell like smoke?', 5, 5)
+
+    Cat('Felix',EH1W,'He\'s the best kitty cat EVER!')
+
+    Pig('Pig#1', Oval, 'oink', 5, 5)
+    Pig('Pig#2', random.choice(Room.rooms), 'oink oink', 5, 5)
+    Pig('Pig#4', random.choice(Room.rooms), 'oink oink oink oink', 5, 5)
+
+
+    # generic people
     students = ['Frankie Freshman',
                 'Joe Junior',
                 'Sophie Sophomore',
-                'Cedric Senior']
+                'Cedric Senior',
+                'Manderp Sutherland',
+                'Sven the Destroyer',
+                'Fluffy Willis',
+                'Lord Nattestad',
+                'CALEB']
 
     for student in students:
         NPC(student,
@@ -186,8 +191,7 @@ def create_world ():
             random.randint(1,5))
 
     trolls = ['Polyphemus',
-              'Gollum',
-              'Buttface']
+              'Gollum']
 
     for troll in trolls:
       Troll(troll,
@@ -196,15 +200,37 @@ def create_world ():
             random.randint(1,3),
             random.randint(1,3))
 
-    Trollhunter('Hunter', random.choice(Room.rooms), 'He\'s a great big manly man.')
-    BadNINJA('Greg', EH1, 'I don\'t trust that guy...', 5, 5)
+    # stuffs
+    Radar('handy radar', MH3, 'Shiny!') 
+    Thing('blackboard', AC1, 'Ew, I think it got chalk dust on me.')
+    Thing('lovely trees', Oval, 'That\'s funny, Olin has no trees...')
+
+    MobileThing('cs-book', Oval, 'Much knowledge, wow.')
+    MobileThing('math-book', Oval, 'ALL the numbers!')
+    Wocket('wocket',random.choice(Room.rooms),'Must. Put. In. Pocket!')
+
     Butterfly('Eric', Oval, 'He\'s a very hungry caterpillar!')
-    Cat('Felix',EH1W,'He\'s the best kitty cat EVER!')
+
+    Computer('hal-9000', AC1, '\"I can\t let you do that, Dave.\" Hm. Weird. Who\'s Dave?')
+    Computer('johnny-5', EH1, 'I\'ve never met a computer named Johnny before. I wonder if he likes bagels.')
+
     Food('tuna',DH,'Mmmmm, tuna...')
-    Food('corn', DH, 'Rotary or typewriter? Hmm...')
-    Pig('Pig#1', Oval, 'oink', 5, 5)
-    Pig('Pig#2', random.choice(Room.rooms), 'oink oink', 5, 5)
-    Pig('Pig#4', random.choice(Room.rooms), 'oink oink oink oink', 5, 5)
+    Food('corn', DH,'Rotary or typewriter? Hmm...')
+    Food('milkshake',DH,'Just kidding! The Dining Hall does\'nt make food this delicious.')
+    Food('bagel',DH,'It\'s like a less exciting version of a donut.')
+
+    homeworks = ['hw-1', 
+                 'hw-2',
+                 'hw-3',
+                 'hw-4',
+                 'hw-5',
+                 'hw-6',
+                 'hw-7',
+                 'hw-8']
+    
+    for homework in homeworks:
+        Homework(homework,
+                 random.choice(Room.rooms),'Gross.')
 
 VERBS = {
     'quit' : Quit(),
@@ -230,13 +256,11 @@ VERBS = {
 def print_tick_action (t):
     Player.me.location().report('The clock ticks '+str(t))
 
-
 def read_player_input ():
     while True:
         response = raw_input('\nWhat is thy bidding? ')
         if len(response)>0:
             return response.split()
-
 
 SAME_ROUND = 1
 NEXT_ROUND = 2  
@@ -244,7 +268,6 @@ NEXT_ROUND = 2
 def main ():
     
     print 'Olinland, version 1.4 (Fall 2014)\n'
-
 
     # Create the world
     create_world()

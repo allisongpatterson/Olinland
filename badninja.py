@@ -18,6 +18,7 @@ class BadNINJA (NPC):
                     obj.take(self)
                     self.say('No, no, no! It\'s all wrong, WRONG!')
                     self.say('Burn, baby, burn!')
+                    self.say('Now my eyebrows are singed! Look what you\'ve done!')
                     obj.destroy()
                     burned = True
                     break

@@ -32,3 +32,6 @@ class WObject (object):
 
     def is_cat (self):
         return False
+
+    def is_wocket (self):
+        return False

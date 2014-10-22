@@ -25,11 +25,11 @@ class Butterfly (MobileThing):
 
     def morph (self):
         if not self._num_morphs:
-            self._description = 'A cocoon.'
+            self._description = 'Now he\'s hiding in a teeny-weeny cocoon.'
             self._num_morphs += 1
             self._morph_timer = 3
         else:
-            self._description = 'A butterfly'
+            self._description = 'What a pretty butterfly!'
             self._num_morphs += 1
             self._is_butterfly = True
             Player.clock.register(self.fly_around, 2)
