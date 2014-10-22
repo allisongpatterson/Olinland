@@ -1,4 +1,10 @@
-"""Allison Patterson and Jacob Kingery"""
+"""Allison Patterson and Jacob Kingery
+
+We added a more complete map; food that restores your health, makes cats 
+your friend, and puts pigs to sleep; cats that follow you if you feed them;
+pigs that run around and trip people; wockets that go in your pockets; and
+a locking cycle for the dining hall.
+"""
 
 import random
 
@@ -40,8 +46,6 @@ def biconnect (fr,dir,to):
     connect(fr,dir,to)
     connect(to,REVERSE[dir],fr)
 
-
-
 def create_world ():
 
     # Outside
@@ -62,8 +66,7 @@ def create_world ():
     MH4 = Room('Milas Hall Fourth Floor','It\'s Entirely Possible That This Floor Doesn\'t Actually Exist',False)
 
     # DH
-    DH = Room('Dining Hall','Food Food Food Food Food',True)
-    Mezz = Room('Dining Hall Mezz','That Place Where All The Meetings Happen Because Outlets',False)
+    DH = Room('Dining Hall','Food Food Food Food. The Mezz Is Closed Due To Old Men In Suits Talking.',True)
 
     # WH
     WH1 = Room('West Hall First Floor','Foose-Ball, Air Hockey, And Nerf Armory',False)
@@ -124,8 +127,6 @@ def create_world ():
     biconnect(MH2,'up',MH3)
     biconnect(MH3,'up',MH4)
 
-    biconnect(DH,'up',Mezz)
-
     biconnect(WH1,'up',WH2)
     biconnect(WH1,'west',WH1W)
     biconnect(WH1,'east',WH1E)
@@ -150,12 +151,27 @@ def create_world ():
     biconnect(EH1,'east',EH1E)
     biconnect(EH1,'north',EH1N)
 
+    biconnect(EH2,'up',EH3)
+    biconnect(EH2,'west',EH2W)
+    biconnect(EH2,'east',EH2E)
+    biconnect(EH2,'north',EH2N)
+
+    biconnect(EH3,'up',EH4)
+    biconnect(EH3,'west',EH3W)
+    biconnect(EH3,'east',EH3E)
+    biconnect(EH3,'north',EH3N)
+
+    biconnect(EH4,'west',EH4W)
+    biconnect(EH4,'east',EH4E)
+    biconnect(EH4,'north',EH4N)
 
     # make Player
-    Player('Blubbering-Fool', Oval, 'player desc')
+    Player('Blubbering-Fool', Oval, 'It\'s a-me, me-rio.')
 
     # specific people
     Professor('Riccardo', AC1, 'I think he needs some sleep.', random.randint(1,5),2)
+
+    NPC('PAULBOOTH', random.choice(Room.rooms), 'PAULBOOTHPAULBOOTHPAULBOOTH', random.randint(1,3), random.randint(1,5))
 
     Troll('Buttface',Oval,'He\'s a buttface',random.randint(1,3),random.randint(1,3))
     Troll('Babbie Bro',random.choice(Room.rooms),'Where\'s Bill when you need him?',random.randint(1,3),random.randint(1,3))
@@ -180,8 +196,7 @@ def create_world ():
                 'Manderp Sutherland',
                 'Sven the Destroyer',
                 'Fluffy Willis',
-                'Lord Nattestad',
-                'CALEB']
+                'Lord Nattestad']
 
     for student in students:
         NPC(student,
@@ -211,7 +226,7 @@ def create_world ():
 
     Butterfly('Eric', Oval, 'He\'s a very hungry caterpillar!')
 
-    Computer('hal-9000', AC1, '\"I can\t let you do that, Dave.\" Hm. Weird. Who\'s Dave?')
+    Computer('hal-9000', AC1, '\"I can\'t let you do that, Dave.\" Hm. Weird. Who\'s Dave?')
     Computer('johnny-5', EH1, 'I\'ve never met a computer named Johnny before. I wonder if he likes bagels.')
 
     Food('tuna',DH,'Mmmmm, tuna...')
