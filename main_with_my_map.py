@@ -201,7 +201,7 @@ def create_world ():
             random.randint(1,3))
 
     # stuffs
-    Radar('handy radar', MH3, 'Shiny!') 
+    Radar('handy radar', Oval, 'Shiny!') 
     Thing('blackboard', AC1, 'Ew, I think it got chalk dust on me.')
     Thing('lovely trees', Oval, 'That\'s funny, Olin has no trees...')
 

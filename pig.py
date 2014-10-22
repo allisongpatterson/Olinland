@@ -69,7 +69,7 @@ class Pig (NPC):
 
     def die (self):
         self.say('SQUEEEEeeee...')
-        Food('bacon',self.location(),'Poor ' + self.name() + '...')
+        Food('bacon#'+self.name()[-1],self.location(),'Poor ' + self.name() + '...')
         self.destroy()
 
     def is_pig (self):
