@@ -68,7 +68,7 @@ class Pig (NPC):
 
     def die (self):
         self.say('SQUEEEEeeee...')
-        Person.die(self)
+        self.destroy()
 
     def is_pig (self):
         return True

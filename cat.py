@@ -53,7 +53,7 @@ class Cat (NPC):
         self.say(':( :( :( :( :(')
         if self._friend:
             self._friend._companion = None
-        Person.die(self)
+        self.destroy()
 
     def is_cat (self):
         return True
