@@ -149,54 +149,18 @@ def create_world ():
     biconnect(EH1,'east',EH1E)
     biconnect(EH1,'north',EH1N)
 
-
-    # mh353 = Room('Riccardo Office', 'It\'s a bit cramped in here.', False)
-    # mh3rd = Room('Milas Hall Third Floor', 'desc', False)
-    # mh2nd = Room('Milas Hall Second Floor', 'desc', False)
-    # mh1st = Room('Milas Hall First Floor', 'desc', False)
-    # oval = Room('Oval', 'The Oval, smack in the center of Olin College.', False)
-    # ac1st = Room('Academic Center First Floor', 'desc', False)
-    # ac113 = Room('Academic Center 113', 'desc', False)
-    # cc1st = Room('Campus Center First Floor', 'desc', False)
-    # westh = Room('West Hall', 'The first (and western most) of Olin\'s two dorms.', False)
-    # easth = Room('East Hall', 'The second (and eastern most) of Olin\'s two dorms.', False)
-    # babson = Room('Babson College', 'Land of the Beavers.', False)
-    # dhall = Room('Dining Hall', 'desc', True)
-
-    # biconnect(mh353, 'east',  mh3rd)
-    # biconnect(mh3rd, 'down',  mh2nd)
-    # biconnect(mh2nd, 'down',  mh1st)
-    # biconnect(mh1st, 'north',  oval)
-    # biconnect(oval, 'east',  cc1st)
-    # biconnect(cc1st, 'east',  westh)
-    # biconnect(westh, 'east',  easth)
-    # biconnect(oval, 'north',  babson)
-    # biconnect(oval, 'west',  ac1st)
-    # biconnect(ac1st, 'north',  ac113)
-
-    # biconnect(cc1st, 'east', dhall)
-
-    # The player is the first 'thing' that has to be created
-
     Player('Blubbering-Fool', Oval, 'player desc')
 
-    # Radar('handy radar', mh353, 'radar desc') 
-    # # Radar('handy radar', oval, 'radar desc') 
-    # Thing('blackboard', ac113, 'blackboard desc')
-    # Thing('lovely-trees', oval, 'trees desc')
-    # MobileThing('cs-book', oval, 'cs book desc')
-    # MobileThing('math-book', oval, 'math book desc')
+    Radar('handy radar', MH3, 'Shiny!') 
+    Thing('blackboard', AC1, 'Ew, I think it got chalk dust on me.')
+    Thing('lovely-trees', Oval, 'That\'s funny, Olin has no trees...')
+    MobileThing('cs-book', Oval, 'Much knowledge, wow.')
+    MobileThing('math-book', Oval, 'ALL the numbers!')
 
-    # MobileThing('food', dhall, 'food desc')
+    Computer('hal-9000', AC1, '\"I can\t let you do that, Dave.\" Hm. Weird. Who\'s Dave?')
+    Computer('johnny-5', EH1, 'I\'ve never met a computer named Johnny before.')
 
-    # # Computer('hal-9000', ac113, 'hal-9000 desc')
-    # Computer('johnny-5', easth, 'johnny-5 desc')
-    # Computer('hal-9000', oval, 'hal-9000 desc')
-    # Homework('hw-7', oval, 'work work work')
-    # Homework('hw-8', oval, 'work work work')
-
-    # Professor('Riccardo', oval, 'I think he needs some sleep.', random.randint(1,5),2)
-    # # Professor('Riccardo', mh353, 'Riccardo desc', random.randint(1,5),2)
+    Professor('Riccardo', AC1, 'I think he needs some sleep.', random.randint(1,5),2)
     
     homeworks = ['hw-1', 
                  'hw-2',
@@ -209,39 +173,38 @@ def create_world ():
         Homework(homework,
                  random.choice(Room.rooms),'Gross.')
 
-    # students = ['Frankie Freshman',
-    #             'Joe Junior',
-    #             'Sophie Sophomore',
-    #             'Cedric Senior']
+    students = ['Frankie Freshman',
+                'Joe Junior',
+                'Sophie Sophomore',
+                'Cedric Senior']
 
-    # for student in students:
-    #     NPC(student,
-    #         random.choice(Room.rooms), 
-    #         'Look, another Oliner!',
-    #         random.randint(1,5),
-    #         random.randint(1,5))
+    for student in students:
+        NPC(student,
+            random.choice(Room.rooms), 
+            'Hey look, another Oliner!',
+            random.randint(1,5),
+            random.randint(1,5))
 
-    # trolls = ['Polyphemus',
-    #           'Gollum']
+    trolls = ['Polyphemus',
+              'Gollum',
+              'Buttface']
 
-    # for troll in trolls:
-    #   Troll(troll,
-    #         random.choice(Room.rooms),
-    #         'Big. Ugly. Smelly.',
-    #         random.randint(1,3),
-    #         random.randint(1,3))
+    for troll in trolls:
+      Troll(troll,
+            random.choice(Room.rooms),
+            'Big. Ugly. Smelly.',
+            random.randint(1,3),
+            random.randint(1,3))
 
-    # Troll('Buttface', oval, 'He\'s a buttface.', 100, 2)
-
-    # Trollhunter('Hunter', oval, 'He\'s a great big manly man.')
-    # BadNINJA('Greg', oval, 'I don\'t trust that guy...', 5, 5)
-    # Butterfly('Eric', oval, 'He\'s a very hungry caterpillar!')
-    # Cat('Felix',oval,'He\'s the best kitty cat EVER!')
-    # Food('tuna',oval,'Mmmmm, tuna...')
-    # Food('corn', oval, 'Rotary or typewriter? Hmm...')
-    # Pig('Pig#1', babson, 'oink', 5, 5)
-    # Pig('Pig#2', oval, 'oink oink', 5, 5)
-    # Pig('Pig#4', oval, 'oink oink oink oink', 5, 5)
+    Trollhunter('Hunter', random.choice(Room.rooms), 'He\'s a great big manly man.')
+    BadNINJA('Greg', EH1, 'I don\'t trust that guy...', 5, 5)
+    Butterfly('Eric', Oval, 'He\'s a very hungry caterpillar!')
+    Cat('Felix',EH1W,'He\'s the best kitty cat EVER!')
+    Food('tuna',DH,'Mmmmm, tuna...')
+    Food('corn', DH, 'Rotary or typewriter? Hmm...')
+    Pig('Pig#1', Oval, 'oink', 5, 5)
+    Pig('Pig#2', random.choice(Room.rooms), 'oink oink', 5, 5)
+    Pig('Pig#4', random.choice(Room.rooms), 'oink oink oink oink', 5, 5)
 
 VERBS = {
     'quit' : Quit(),
