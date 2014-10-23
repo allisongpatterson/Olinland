@@ -2,8 +2,8 @@
 
 We added a more complete map; food that restores your health, makes cats 
 your friend, and puts pigs to sleep; cats that follow you if you feed them;
-pigs that run around and trip people; wockets that go in your pockets; and
-a locking cycle for the dining hall.
+pigs that run around and trip people (and become bacon when they die); 
+wockets that go in your pockets; and a locking cycle for the dining hall.
 """
 
 import random

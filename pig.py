@@ -38,10 +38,11 @@ class Pig (NPC):
             self.location().report(self.name() + ' squeals excitedly')
 
     def sleep (self, time):
-        if self._sleep_timer:
-            self._sleep_timer -= 1
-            if not self._sleep_timer:
-                self.location().report(self.name()+' wakes up from his nap.')
+        if not self.is_in_limbo():
+            if self._sleep_timer:
+                self._sleep_timer -= 1
+                if not self._sleep_timer:
+                    self.location().report(self.name()+' wakes up from his nap.')
 
     def is_awake (self):
         return not self._sleep_timer
